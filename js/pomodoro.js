@@ -2,7 +2,6 @@ function Pomodoro() {
 	var workTime,
 		breakTime,
 		timeRemaining,
-		startTime,
 		lastTime,
 		timer,
 		state = 'work',
@@ -46,10 +45,11 @@ function Pomodoro() {
 		logEverything();
 	};
 
-	this.init = function (workTime, breakTime) {
-		setWork(workTime);
-		setBreak(breakTime);
-		timeRemaining = workTime * 60 * 1000;
+	this.init = function (initWorkTime, initBreakTime) {
+		setWork(initWorkTime);
+		setBreak(initBreakTime);
+		timeRemaining = workTime;
+		console.log("time remaining initial value: " + timeRemaining);
 	};
 
 	this.start = function() {
@@ -64,7 +64,6 @@ function Pomodoro() {
 	function logEverything() {
 		console.log("work time: " + toMinSec(workTime) +
 			"\t\tbreak time: " + toMinSec(breakTime) +
-			"\t\tstart time: " + startTime +
 			"\t\ttime remaining: " + toMinSec(timeRemaining) +
 			"\t\tstate: " + state +
 			"\t\twork cycles: " + workCycles);
