@@ -3,6 +3,8 @@ function Pomodoro() {
 		breakTime,
 		timeRemaining,
 		startTime,
+		lastTime,
+		timer,
 		state = 'work',
 		workCycles = 0;
 
@@ -23,22 +25,21 @@ function Pomodoro() {
 	}
 
 	function update() {
-		var timeElapsed = Date.now() - startTime;
-		if (state === 'work') {
-			timeRemaining = workTime - timeElapsed;
-		}
-		else if (state === 'break') {
-			timeRemaining = breakTime - timeElapsed;
-		}
+		var currTime = Date.now();
+		var timeElapsed = currTime - lastTime;
+		timeRemaining -= timeElapsed;
+		lastTime = currTime;
 
 		if (timeRemaining <= 0) {
 			startTime = Date.now();
 			if (state === 'work') {
 				workCycles++;
 				state = 'break';
+				timeRemaining = breakTime;
 			}
 			else if (state === 'break') {
 				state = 'work';
+				timeRemaining = workTime;
 			}
 		}
 
@@ -48,11 +49,16 @@ function Pomodoro() {
 	this.init = function (workTime, breakTime) {
 		setWork(workTime);
 		setBreak(breakTime);
+		timeRemaining = workTime * 60 * 1000;
 	};
 
 	this.start = function() {
-		startTime = Date.now();
-		var timer = setInterval(update, 500);
+		lastTime = Date.now();
+		timer = setInterval(update, 500);
+	};
+
+	this.pause = function() {
+		clearInterval(timer);
 	};
 
 	function logEverything() {
