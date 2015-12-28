@@ -21,7 +21,7 @@ function Pomodoro() {
 		var min = Math.floor(time / 60);
 		sec = sec.slice(-2);
 		return min + ":" + sec;
-	}
+	};
 
 	function update() {
 		var currTime = Date.now();
@@ -30,7 +30,6 @@ function Pomodoro() {
 		lastTime = currTime;
 
 		if (timeRemaining <= 0) {
-			startTime = Date.now();
 			if (state === 'work') {
 				workCycles++;
 				state = 'break';
@@ -54,6 +53,7 @@ function Pomodoro() {
 
 	this.start = function() {
 		lastTime = Date.now();
+		update();
 		timer = setInterval(update, 500);
 	};
 
