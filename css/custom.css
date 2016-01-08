@@ -1,0 +1,16 @@
+.empty, .full {
+	width: 64px;
+	height: 49px;
+}
+
+.empty {
+	position: relative;
+	background: url("../img/heart-empty.png") no-repeat center center;
+}
+
+.full {
+	position: absolute;
+	background: url("../img/heart-full.png") no-repeat center center;
+	clip-path: inset(0 50% 0 0);
+	-webkit-clip-path: inset(0 50% 0 0);
+}
