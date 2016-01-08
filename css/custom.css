@@ -1,14 +1,17 @@
 .container {
 	height: 100vh;
-	width: 100%;
+	width: 50%;
+	margin: auto;
+	backgrond-color: black;
 }
 
-h2 {
-	color: red;
+.life-heading {
+	margin: auto;
+	padding-bottom: 30px;
 }
 
 .life {
-	width: 400px;
+	width: 450px;
 	height: 200px;
 	background-color: black;
 }
@@ -21,11 +24,15 @@ h2 {
 .empty {
 	position: relative;
 	background: url("../img/heart-empty.png") no-repeat center center;
+	float: left;
 }
 
 .full {
 	position: absolute;
 	background: url("../img/heart-full.png") no-repeat center center;
-	clip-path: inset(0 50% 0 0);
-	-webkit-clip-path: inset(0 50% 0 0);
+}
+
+.partial {
+	clip-path: inset(0 30% 0 0);
+	-webkit-clip-path: inset(0 30% 0 0);
 }
