@@ -42,4 +42,21 @@
 .a, .b  {
 	display: inline-block;
 	float: left;
+	width: 143px;
+	height: 150px;
+	color: #fcf7f7;
+	text-align: center;
+	font-size: 55px;
+}
+
+.a {
+	background: url("../img/a.png") no-repeat center center;
+}
+
+.b {
+	background: url("../img/b.png") no-repeat center center;
+}
+
+i {
+	padding-top: 60px;
 }
