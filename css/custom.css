@@ -1,3 +1,14 @@
+@font-face {
+    font-family: "triforce";
+    src: url("../font/Triforce.ttf");
+}
+
+@font-face {
+    font-family: "gannon";
+    src: url("font/ReturnofGanon.ttf");
+}
+
+
 .container {
 	height: 100vh;
 	width: 100%;
@@ -64,3 +75,17 @@ i {
 .ruby {
 	padding-bottom: 15px;
 }
+
+.score {
+	font-size: 30px;
+	color: #fcf7f7;
+}
+
+.time {
+	font-family: triforce;
+	display: inline-block;
+	padding-left: 15px;
+}
+
+
+
