@@ -2,7 +2,7 @@
 	height: 100vh;
 	width: 100%;
 	margin: auto;
-	backgrond-color: black;
+	background-color: black;
 }
 
 .life-heading {
@@ -59,4 +59,8 @@
 
 i {
 	padding-top: 60px;
+}
+
+.ruby {
+	padding-bottom: 15px;
 }
