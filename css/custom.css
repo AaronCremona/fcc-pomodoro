@@ -78,14 +78,21 @@ i {
 
 .score {
 	font-size: 30px;
-	color: #fcf7f7;
 }
 
 .time {
-	font-family: triforce;
 	display: inline-block;
 	padding-left: 15px;
 }
 
+body {
+	font-family: triforce;
+	color: #fcf7f7;
+}
+
+h1 {
+	font-size: 70px;
+	padding-bottom: 20px;
+}
 
 
