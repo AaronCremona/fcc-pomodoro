@@ -11,7 +11,8 @@ function Pomodoro() {
 		workRemainingId, 
 		breakRemainingId,
 		totalTimeId,
-		lifeContainer;
+		lifeContainer,
+		targetId;
 
 	function setWork (time) {
 		workTime = time * 60 * 1000;
@@ -40,15 +41,18 @@ function Pomodoro() {
 			if (state === 'work') {
 				workCycles++;
 				state = 'break';
+				targetId = breakRemainingId;
 				timeRemaining = breakTime;
 			}
 			else if (state === 'break') {
 				state = 'work';
+				targetId = workRemainingId;
 				timeRemaining = workTime;
 			}
 		}
 
 		logEverything();
+		updateDom();
 	};
 
 	this.init = function (params) {
@@ -58,13 +62,14 @@ function Pomodoro() {
 		breakRemainingId = breakRemainingId;
 		totalTimeId = totalTimeId;
 		lifeContainer = lifeContainer;
+		targetId = workRemainingId;
 		console.log("time remaining initial value: " + timeRemaining);
 	};
 
 	this.start = function() {
 		lastTime = Date.now();
 		update();
-		timer = setInterval(update, 500);
+		timer = setInterval(update, 1000);
 	};
 
 	this.pause = function() {
@@ -77,5 +82,9 @@ function Pomodoro() {
 			"\t\ttime remaining: " + toMinSec(timeRemaining) +
 			"\t\tstate: " + state +
 			"\t\twork cycles: " + workCycles);
+	};
+
+	function updateDom() {
+		$(targetId).text(toMinSec(timeRemaining));
 	};
 }
