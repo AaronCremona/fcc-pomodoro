@@ -50,8 +50,8 @@ div {
 }
 
 .partial {
-	clip-path: inset(0 30% 0 0);
-	-webkit-clip-path: inset(0 30% 0 0);
+	clip-path: inset(0 100% 0 0);
+	-webkit-clip-path: inset(0 100% 0 0);
 }
 
 .a, .b  {

@@ -2,6 +2,7 @@ function Pomodoro() {
 	var workTime,
 		breakTime,
 		timeRemaining,
+		percentRemaining = 100,
 		lastTime,
 		timer,
 		state = 'work',
@@ -39,6 +40,7 @@ function Pomodoro() {
 
 		if (state === 'work') {
 			totalTime += timeElapsed;
+			percentRemaining = 100 - ((workTime - timeRemaining) / workTime * 100);
 		}
 
 		lastTime = currTime;
@@ -89,13 +91,17 @@ function Pomodoro() {
 			"\t\tbreak time: " + toMinSec(breakTime) +
 			"\t\ttime remaining: " + toMinSec(timeRemaining) +
 			"\t\tstate: " + state +
-			"\t\twork cycles: " + workCycles);
+			"\t\twork cycles: " + workCycles +
+			"\t\tpercent remaining: " + percentRemaining);
 	};
 
 	function updateDom() {
 		$(targetId).text(toMinSec(timeRemaining));
 		if (state === 'work'){
 			$(totalTimeId).text(toMinSec(totalTime));
+			clipPath = "inset(0 " + percentRemaining + "% 0 0)"
+			$('.partial').css("clip-path", clipPath);
+			$('.partial').css("-webkit-clip-path", clipPath);
 		}
 	};
 
