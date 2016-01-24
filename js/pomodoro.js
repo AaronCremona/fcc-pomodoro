@@ -115,7 +115,7 @@ function Pomodoro() {
 			targetId = workRemainingId;
 			$(targetId).css("color", "green");
 			timeRemaining = workTime;
-
+			addHeart();
 		}
 		else {
 			targetId = breakRemainingId;
@@ -124,5 +124,10 @@ function Pomodoro() {
 		}
 
 		updateDom();		
+	}
+
+	function addHeart() {
+		$('.partial').removeClass("partial");
+		$(lifeContainer).append("<div class='empty'><div class='full partial'></div></div>");
 	}
 }
