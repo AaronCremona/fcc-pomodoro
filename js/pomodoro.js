@@ -40,14 +40,10 @@ function Pomodoro() {
 		if (timeRemaining <= 0) {
 			if (state === 'work') {
 				workCycles++;
-				state = 'break';
-				targetId = breakRemainingId;
-				timeRemaining = breakTime;
+				changeState('break');
 			}
 			else if (state === 'break') {
-				state = 'work';
-				targetId = workRemainingId;
-				timeRemaining = workTime;
+				changeState('work');
 			}
 		}
 
@@ -88,4 +84,16 @@ function Pomodoro() {
 		$(targetId).text(toMinSec(timeRemaining));
 	};
 
+	function changeState(newState) {
+		state = newState;
+		if (state === 'work') {
+			targetId = workRemainingId;
+			timeRemaining = workTime;
+		}
+		else {
+			targetId = breakRemainingId;
+			timeRemaining = breakTime;
+		}
+
+	}
 }
