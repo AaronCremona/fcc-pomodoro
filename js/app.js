@@ -1,4 +1,5 @@
-var p = new Pomodoro;
+var p = new Pomodoro,
+	paused = true;
 
 p.init({
 	workTime: .1, 
@@ -9,4 +10,17 @@ p.init({
 	lifeContainer: "#hearts"
 	});
 
-p.start();
+$(".b").on("click", function() {
+	$(".b i").toggleClass("hidden");
+
+	if (paused) {
+		paused = false;
+		p.start();
+	}
+	else {
+		paused = true;
+		p.pause();
+	}
+});
+
+

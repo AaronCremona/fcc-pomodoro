@@ -1,4 +1,6 @@
-/*ling */
+div {
+	border: 1px red dashed;
+}
 
 @font-face {
     font-family: "triforce";
@@ -62,12 +64,20 @@
 	font-size: 55px;
 }
 
+.a:hover, .b:hover {
+	cursor: pointer;
+}
+
 .a {
 	background: url("../img/a.png") no-repeat center center;
 }
 
 .b {
 	background: url("../img/b.png") no-repeat center center;
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 i {

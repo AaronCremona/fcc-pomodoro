@@ -108,8 +108,6 @@ function Pomodoro() {
 			targetId = breakRemainingId;
 			$(targetId).css("color", "red");
 			timeRemaining = breakTime;
-		}
-
-		
+		}		
 	}
 }
