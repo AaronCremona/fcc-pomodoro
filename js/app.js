@@ -23,4 +23,12 @@ $(".b").on("click", function() {
 	}
 });
 
+$(".a").on("click", function() {
+	p.reset();
+
+	if (!paused) {
+		$(".b i").toggleClass("hidden");
+	}
+});
+
 

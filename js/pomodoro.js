@@ -78,6 +78,12 @@ function Pomodoro() {
 		clearInterval(timer);
 	};
 
+	this.reset = function() {
+		this.pause();
+		totalTime = 0;
+		changeState('work');
+	};
+
 	function logEverything() {
 		console.log("work time: " + toMinSec(workTime) +
 			"\t\tbreak time: " + toMinSec(breakTime) +
@@ -103,11 +109,14 @@ function Pomodoro() {
 			targetId = workRemainingId;
 			$(targetId).css("color", "green");
 			timeRemaining = workTime;
+
 		}
 		else {
 			targetId = breakRemainingId;
 			$(targetId).css("color", "red");
 			timeRemaining = breakTime;
-		}		
+		}
+
+		updateDom();		
 	}
 }
