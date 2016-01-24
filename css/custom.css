@@ -1,3 +1,7 @@
+/*div {
+	border: red 1px dashed;
+}*/
+
 @font-face {
     font-family: "triforce";
     src: url("../font/Triforce.ttf");
@@ -83,6 +87,14 @@ i {
 .time {
 	display: inline-block;
 	padding-left: 15px;
+}
+
+#break-remaining {
+	color: gray;
+}
+
+.score img {
+	width: 75px;
 }
 
 body {

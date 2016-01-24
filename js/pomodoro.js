@@ -85,7 +85,11 @@ function Pomodoro() {
 	};
 
 	function changeState(newState) {
+		$(targetId).text("--:--");
+		$(targetId).css("color", "grey");
+
 		state = newState;
+
 		if (state === 'work') {
 			targetId = workRemainingId;
 			timeRemaining = workTime;
@@ -95,5 +99,6 @@ function Pomodoro() {
 			timeRemaining = breakTime;
 		}
 
+		$(targetId).css("color", "white");
 	}
 }
