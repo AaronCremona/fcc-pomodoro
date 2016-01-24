@@ -59,9 +59,9 @@ function Pomodoro() {
 		setWork(params.workTime);
 		setBreak(params.breakTime);
 		workRemainingId = params.workRemainingId;
-		breakRemainingId = breakRemainingId;
-		totalTimeId = totalTimeId;
-		lifeContainer = lifeContainer;
+		breakRemainingId = params.breakRemainingId;
+		totalTimeId = params.totalTimeId;
+		lifeContainer = params.lifeContainer;
 		targetId = workRemainingId;
 		console.log("time remaining initial value: " + timeRemaining);
 	};
@@ -87,4 +87,5 @@ function Pomodoro() {
 	function updateDom() {
 		$(targetId).text(toMinSec(timeRemaining));
 	};
+
 }
