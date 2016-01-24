@@ -1,6 +1,4 @@
-/*div {
-	border: red 1px dashed;
-}*/
+/*ling */
 
 @font-face {
     font-family: "triforce";
@@ -87,6 +85,10 @@ i {
 .time {
 	display: inline-block;
 	padding-left: 15px;
+}
+
+#time-remaining {
+	color: green;
 }
 
 #break-remaining {

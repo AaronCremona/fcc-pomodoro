@@ -11,6 +11,7 @@ function Pomodoro() {
 		workRemainingId, 
 		breakRemainingId,
 		totalTimeId,
+		totalTime = 0,
 		lifeContainer,
 		targetId;
 
@@ -35,6 +36,11 @@ function Pomodoro() {
 		var currTime = Date.now();
 		var timeElapsed = currTime - lastTime;
 		timeRemaining -= timeElapsed;
+
+		if (state === 'work') {
+			totalTime += timeElapsed;
+		}
+
 		lastTime = currTime;
 
 		if (timeRemaining <= 0) {
@@ -82,6 +88,9 @@ function Pomodoro() {
 
 	function updateDom() {
 		$(targetId).text(toMinSec(timeRemaining));
+		if (state === 'work'){
+			$(totalTimeId).text(toMinSec(totalTime));
+		}
 	};
 
 	function changeState(newState) {
@@ -92,13 +101,15 @@ function Pomodoro() {
 
 		if (state === 'work') {
 			targetId = workRemainingId;
+			$(targetId).css("color", "green");
 			timeRemaining = workTime;
 		}
 		else {
 			targetId = breakRemainingId;
+			$(targetId).css("color", "red");
 			timeRemaining = breakTime;
 		}
 
-		$(targetId).css("color", "white");
+		
 	}
 }
