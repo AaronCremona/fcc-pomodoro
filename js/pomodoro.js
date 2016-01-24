@@ -71,7 +71,7 @@ function Pomodoro() {
 	this.start = function() {
 		lastTime = Date.now();
 		update();
-		timer = setInterval(update, 1000);
+		timer = setInterval(update, 100);
 	};
 
 	this.pause = function() {
