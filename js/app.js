@@ -26,9 +26,12 @@ $(".b").on("click", function() {
 $(".a").on("click", function() {
 	p.reset();
 
-	if (!paused) {
+	if (!paused) {  //if not paused
 		$(".b i").toggleClass("hidden");
+
+		paused = true;
 	}
+
 });
 
 
