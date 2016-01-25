@@ -1,5 +1,6 @@
 var p = new Pomodoro,
-	paused = true;
+	paused = true,
+	a = document.getElementsByTagName("audio")[0];
 
 p.init({
 	workTime: .1, 
@@ -16,22 +17,17 @@ $(".b").on("click", function() {
 	if (paused) {
 		paused = false;
 		p.start();
+		a.play();
 	}
 	else {
 		paused = true;
 		p.pause();
+		a.pause();
 	}
 });
 
 $(".a").on("click", function() {
-	p.reset();
-
-	if (!paused) {  //if not paused
-		$(".b i").toggleClass("hidden");
-
-		paused = true;
-	}
-
+	location.reload();
 });
 
 
