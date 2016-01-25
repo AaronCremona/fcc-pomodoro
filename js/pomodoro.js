@@ -84,6 +84,8 @@ function Pomodoro() {
 		this.pause();
 		totalTime = 0;
 		changeState('work');
+		$(lifeContainer).html("");
+		addHeart();
 	};
 
 	function logEverything() {
