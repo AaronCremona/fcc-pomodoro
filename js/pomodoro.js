@@ -57,7 +57,7 @@ function Pomodoro() {
 			}
 		}
 
-		logEverything();
+		// logEverything();
 		updateDom();
 	};
 
