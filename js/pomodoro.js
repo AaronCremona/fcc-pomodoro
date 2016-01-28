@@ -14,7 +14,9 @@ function Pomodoro() {
 		totalTimeId,
 		totalTime = 0,
 		lifeContainer,
-		targetId;
+		targetId,
+		workAudio = document.getElementsByTagName("audio")[0],
+		finishedAudio = document.getElementsByTagName("audio")[1];
 
 	function setWork (time) {
 		workTime = time * 60 * 1000;
@@ -74,10 +76,12 @@ function Pomodoro() {
 		lastTime = Date.now();
 		update();
 		timer = setInterval(update, 100);
+		workAudio.play();
 	};
 
 	this.pause = function() {
 		clearInterval(timer);
+		workAudio.pause();
 	};
 
 	this.reset = function() {
@@ -118,11 +122,14 @@ function Pomodoro() {
 			$(targetId).css("color", "green");
 			timeRemaining = workTime;
 			addHeart();
+			workAudio.play();
 		}
 		else {
 			targetId = breakRemainingId;
 			$(targetId).css("color", "red");
 			timeRemaining = breakTime;
+			workAudio.pause();
+			finishedAudio.play();
 		}
 
 		updateDom();		
