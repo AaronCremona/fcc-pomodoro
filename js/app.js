@@ -24,7 +24,7 @@ $(".b").on("click", function() {
 });
 
 $(".a").on("click", function() {
-	location.reload();
+	// show settings
 });
 
 

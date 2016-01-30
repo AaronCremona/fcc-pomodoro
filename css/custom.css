@@ -1,6 +1,6 @@
-/*div {
+div {
 	border: 1px red dashed;
-}*/
+}
 
 @font-face {
     font-family: "triforce";
@@ -109,6 +109,10 @@ i {
 	width: 75px;
 }
 
+.settings {
+	font-size: 30px;
+}
+
 body {
 	font-family: triforce;
 	color: #fcf7f7;
@@ -119,4 +123,11 @@ h1 {
 	padding-bottom: 20px;
 }
 
+h2 {
+	font-size: 40px;
+	padding-bottom: 20px;
+}
 
+h3 {
+	font-size: 30px;
+}
