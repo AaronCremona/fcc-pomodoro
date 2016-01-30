@@ -2,8 +2,8 @@ var p = new Pomodoro,
 	paused = true;
 
 p.init({
-	workTime: 25, 
-	breakTime: 5, 
+	workTime: 1, 
+	breakTime: .25, 
 	workRemainingId: "#time-remaining", 
 	breakRemainingId: "#break-remaining",
 	totalTimeId: "#total",
