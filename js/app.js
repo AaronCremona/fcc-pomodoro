@@ -24,7 +24,21 @@ $(".b").on("click", function() {
 });
 
 $(".a").on("click", function() {
-	// show settings
+	// show / hide settings
+});
+
+$("#work-up").on("click", function() {
+	console.log("work up");
+});
+$("#work-down").on("click", function() {
+	console.log("work down");
+});
+
+$("#break-up").on("click", function() {
+	console.log("break up");
+});
+$("#break-down").on("click", function() {
+	console.log("break down");
 });
 
 
