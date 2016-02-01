@@ -1,7 +1,3 @@
-/*div {
-	border: 1px red dashed;
-}*/
-
 @font-face {
     font-family: "triforce";
     src: url("../font/Triforce.ttf");
@@ -14,44 +10,21 @@
 
 
 .container {
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	margin: auto;
 	background-color: black;
 }
 
-.life-heading {
-	margin: auto;
-	padding-bottom: 30px;
+
+.nav-icons i {
+	padding: 0 15px 30px 0;
+	font-size: 50px;
+	color: #fcf7f7;;
 }
 
-.life {
-	width: 450px;
-	height: 200px;
-	background-color: black;
-	display: inline-block;
-	float: left;
-}
-
-.empty, .full {
-	width: 64px;
-	height: 49px;
-}
-
-.empty {
-	position: relative;
-	background: url("../img/heart-empty.png") no-repeat center center;
-	float: left;
-}
-
-.full {
-	position: absolute;
-	background: url("../img/heart-full.png") no-repeat center center;
-}
-
-.partial {
-	clip-path: inset(0 100% 0 0);
-	-webkit-clip-path: inset(0 100% 0 0);
+.nav-icons div {
+	display: inline;
 }
 
 .a, .b  {
@@ -109,6 +82,46 @@ i {
 	width: 75px;
 }
 
+.settings {
+	font-size: 30px;
+	display: none;
+}
+
+.life-heading {
+	margin: auto;
+	padding-bottom: 30px;
+}
+
+.life {
+	width: 450px;
+	height: 200px;
+	background-color: black;
+	display: inline-block;
+	float: left;
+}
+
+.empty, .full {
+	width: 64px;
+	height: 49px;
+}
+
+.empty {
+	position: relative;
+	background: url("../img/heart-empty.png") no-repeat center center;
+	float: left;
+}
+
+.full {
+	position: absolute;
+	background: url("../img/heart-full.png") no-repeat center center;
+}
+
+.partial {
+	clip-path: inset(0 100% 0 0);
+	-webkit-clip-path: inset(0 100% 0 0);
+}
+
+
 body {
 	font-family: triforce;
 	color: #fcf7f7;
@@ -119,4 +132,17 @@ h1 {
 	padding-bottom: 20px;
 }
 
+h2 {
+	font-size: 40px;
+	padding-bottom: 20px;
+}
 
+h3 {
+	font-size: 30px;
+}
+
+.modal {
+	color: black;
+	font-size: 16px;
+	font-family: arial;
+}

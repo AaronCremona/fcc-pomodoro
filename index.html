@@ -22,25 +22,29 @@
 <body>
 <body>
   <div class="container">
-    <div class="row">
+    <div class="row title">
       <h1 class="text-center">Zeldadoro Timer</h1>
+      <div class="row nav-icons text-center">
+        <div data-toggle="modal" data-target="#myModal"><i class="fa fa-info-circle"></i></div>
+        <a href="https://github.com/AaronCremona/fcc-pomodoro"><i class="fa fa-github"></i></a>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-2 col-md-offset-1 score">
+      <div class="col-md-2 col-md-offset-2 score">
         <div class="row ruby">
-          <img src="img/ruby.png" />
+          <img src="img/ruby.png" alt="ruby icon from zelda"/>
           <div class="time" id="total">
             0:00
           </div>
         </div>
         <div class="row">
-          <img src="img/key.png" />
+          <img src="img/key.png" alt="key icon from zelda"/>
           <div class="time" id="time-remaining">
             1:00
           </div>
         </div>
         <div class="row">
-          <img src="img/bomb.png" />
+          <img src="img/bomb.png" alt="bomb icon from zelda"/>
           <div class="time" id="break-remaining">
             --:--
           </div>
@@ -52,11 +56,11 @@
         <i class="fa fa-pause hidden" id="pause"></i>
       </div>
       <div class="col-md-1 a">
-        <i class="fa fa-refresh"></i>
+        <i class="fa fa-cog"></i>
       </div>
-      <div class="col-md-6 life">
+      <div class="col-md-4 life">
         <div class="text-center">
-          <img src="img/life-heading.png" class='life-heading'>
+          <img src="img/life-heading.png" class='life-heading' alt="life">
         </div>
         <div id="hearts">
           <div class="empty">
@@ -66,16 +70,58 @@
         </div>
 
       </div>
+    </div> <!-- / row  -->
+
+    <div class="settings">
+
+      <div class="row text-center">
+        <h2>Settings</h2>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-3 col-md-offset-3 text-center">
+          <h3>Work Time</h3>
+          <img src="img/triforce-up.png" id="work-up" alt="zelda triforce">
+          <div id="workSetting">25:00</div>
+          <img src="img/triforce-down.png" id="work-down" alt="zelda triforce">
+        </div>
+
+        <div class="col-md-3 text-center">
+          <h3>Break Time</h3>
+          <img src="img/triforce-up.png" id="break-up" alt="zelda triforce">
+          <div id="breakSetting">5:00</div>
+          <img src="img/triforce-down.png" id="break-down" alt="zelda triforce">
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <audio>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>About</h2>
+        <p>This project was made by <a href="https://twitter.com/aroncremona" target="_blank">@aroncremona</a> as one of the requirements for <a href="http://www.freecodecamp.com/aaroncremona" target="_blank">Free Code Camp's</a> Front End Web Develoment Certificate using Javascript and JQuery. I wanted to make a Pomodoro that wasn't like every other Pomodoro. Let me know if I succeeded.</p>
+        <p><img src="img/ruby.png" alt="ruby icon from zelda"/> The Ruby respresents your <em>Total Score</em> for the day (your total productive time). Try to beat your high score to maximize your productivity and make more Rubies. If your boss doesn't pay you in Rubies, get a new boss.</p>
+        <p><img src="img/key.png" alt="key icon from zelda"/> Actually working is the <em>Key</em> to productivity. When you are supposed to be working, this field will be active with a green count down timer. Stop watching the timer and get working!</p>
+        <p><img src="img/bomb.png" alt="bomb icon from zelda"/> Breaks are the <em>bomb</em>! This field is active with a red countdown timer when you are supposed to be relaxing and recharing your mental batteries. This is the time to check Facebook, Twitter, Snap Chat, LOLCats or whatever it is cool kids do.</p>
+        <p><img src="img/heart-full.png" /> Every Pomodoro cycle you complete adds another heart to your Life Bar. When your Life Bar is looking healthy, GO HOME!</p>
+        <h2>FAQ</h2>
+        <p>Q: Can I change the music?</p>
+        <p>A: Why would you need to? If this song doesn't take your productivity to levels you never imagined, call a doctor because you might be dead inside.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <audio loop>
     <source src="mp3/01 - Intro.mp3" type="audio/mpeg">
-    <source src="mp3/02 - Overworld.mp3" type="audio/mpeg">
-    <source src="mp3/04 - Dungeon" type="audio/mpeg">
-    <source src="mp3/07 - Game Over" type="audio/mpeg">
-    <source src="mp3/09 - Death Mountain" type="audio/mpeg">
-    <source src="mp3/10 - Ending" type="audio/mpeg">
   </audio>
   <audio>
     <source src="mp3/applause.mp3" type="audio/mpeg">
