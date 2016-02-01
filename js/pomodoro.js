@@ -1,11 +1,13 @@
 function Pomodoro() {
 	var workTime,
+		initWorkTime,
 		breakTime,
 		timeRemaining,
 		percentRemaining = 100,
 		lastTime,
 		timer,
 		state = 'work',
+		firstStart = true,
 		workCycles = 0,
 		workTime, 
 		breakTime, 
@@ -20,7 +22,6 @@ function Pomodoro() {
 
 	function setWork (time) {
 		workTime = time * 60 * 1000;
-		timeRemaining = workTime;
 	};
 
 	function setBreak (time) {
@@ -42,7 +43,7 @@ function Pomodoro() {
 
 		if (state === 'work') {
 			totalTime += timeElapsed;
-			percentRemaining = 100 - ((workTime - timeRemaining) / workTime * 100);
+			percentRemaining = 100 - ((initWorkTime - timeRemaining) / workTime * 100);
 		}
 
 		lastTime = currTime;
@@ -57,7 +58,7 @@ function Pomodoro() {
 			}
 		}
 
-		// logEverything();
+		logEverything();
 		updateDom();
 	};
 
@@ -69,10 +70,15 @@ function Pomodoro() {
 		totalTimeId = params.totalTimeId;
 		lifeContainer = params.lifeContainer;
 		targetId = workRemainingId;
-		console.log("time remaining initial value: " + timeRemaining);
 	};
 
 	this.start = function() {
+		if (firstStart) {
+			timeRemaining = workTime;
+			initWorkTime = timeRemaining;
+			firstStart = false;
+		}
+		paused = false;
 		lastTime = Date.now();
 		update();
 		timer = setInterval(update, 100);
@@ -82,6 +88,7 @@ function Pomodoro() {
 	this.pause = function() {
 		clearInterval(timer);
 		workAudio.pause();
+		paused = true;
 	};
 
 	this.reset = function() {
@@ -121,6 +128,7 @@ function Pomodoro() {
 			targetId = workRemainingId;
 			$(targetId).css("color", "green");
 			timeRemaining = workTime;
+			initWorkTime = timeRemaining;
 			addHeart();
 			workAudio.play();
 		}
@@ -133,10 +141,19 @@ function Pomodoro() {
 		}
 
 		updateDom();		
-	}
+	};
 
 	function addHeart() {
 		$('.partial').removeClass("partial");
 		$(lifeContainer).append("<div class='empty'><div class='full partial'></div></div>");
-	}
+	};
+
+	this.changeWorkTime = function(newTime) {
+		setWork(newTime);
+		logEverything();
+	};
+
+	this.changeBreakTime = function(newTime) {
+		setBreak(newTime);
+	};
 }
