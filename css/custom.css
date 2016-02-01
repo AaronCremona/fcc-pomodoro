@@ -20,6 +20,17 @@
 	background-color: black;
 }
 
+
+.nav-icons i {
+	padding: 0 15px 30px 0;
+	font-size: 50px;
+	color: #fcf7f7;;
+}
+
+.nav-icons div {
+	display: inline;
+}
+
 .life-heading {
 	margin: auto;
 	padding-bottom: 30px;
@@ -131,4 +142,10 @@ h2 {
 
 h3 {
 	font-size: 30px;
+}
+
+.modal {
+	color: black;
+	font-size: 16px;
+	font-family: arial;
 }
