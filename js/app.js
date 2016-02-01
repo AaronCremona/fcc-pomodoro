@@ -31,7 +31,7 @@ $(".b").on("click", function() {
 });
 
 $(".a").on("click", function() {
-	// show / hide settings
+	$(".settings").slideToggle( "fast" );
 });
 
 $("#work-up").on("click", function() {

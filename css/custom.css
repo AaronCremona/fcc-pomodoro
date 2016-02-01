@@ -1,6 +1,6 @@
-div {
+/*div {
 	border: 1px red dashed;
-}
+}*/
 
 @font-face {
     font-family: "triforce";
@@ -111,6 +111,7 @@ i {
 
 .settings {
 	font-size: 30px;
+	display: none;
 }
 
 body {
