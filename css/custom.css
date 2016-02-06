@@ -8,6 +8,10 @@
     src: url("font/ReturnofGanon.ttf");
 }
 
+html {
+	background-color: black;
+}
+
 
 .container {
 	min-height: 100vh;
@@ -37,7 +41,7 @@
 	font-size: 55px;
 }
 
-.a:hover, .b:hover {
+i:hover {
 	cursor: pointer;
 }
 
